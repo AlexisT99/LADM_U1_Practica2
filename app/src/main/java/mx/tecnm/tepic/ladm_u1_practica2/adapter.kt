@@ -8,29 +8,27 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import java.io.File
 
-public class adapter :
-    RecyclerView.Adapter<adapter.MyViewHolder> {
+class adapter(context: Context, notas: ArrayList<Notas>?) :
+    RecyclerView.Adapter<adapter.MyViewHolder>() {
 
-    lateinit var contexto: Context
+    var contexto: Context = context
     lateinit var nota: ArrayList<Notas>
 
-    constructor(context: Context, notas: ArrayList<Notas>?) {
-        contexto = context
+    init {
         if (notas != null) {
             nota = notas
         }
     }
 
-    public class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var nombre : TextView ?= null
         var descripcion : TextView ?=null
-        var tipo : TextView ?=null;
+        var tipo : TextView ?=null
 
 
         init {
@@ -51,7 +49,7 @@ public class adapter :
         holder.tipo?.setText(n.tipo)
 
         holder.itemView.setOnLongClickListener {
-            val menu:PopupMenu = PopupMenu(contexto,it)
+            val menu = PopupMenu(contexto,it)
             menu.menu.add("Borrar")
             menu.setOnMenuItemClickListener {
                 if(it.title.equals("Borrar")){

@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import mx.tecnm.tepic.ladm_u1_practica2.databinding.ActivityEditarBinding
-import mx.tecnm.tepic.ladm_u1_practica2.databinding.ActivityMainBinding
 import java.io.File
 
 class EditarActivity : AppCompatActivity() {

@@ -4,15 +4,11 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
-import android.os.Environment.getExternalStorageDirectory
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import mx.tecnm.tepic.ladm_u1_practica2.databinding.ActivityAgregarNotasBinding
 import java.io.File
-import java.io.IOException
-import kotlin.system.exitProcess
 
 public class agregar_notas : AppCompatActivity() {
     private lateinit var b: ActivityAgregarNotasBinding
@@ -24,7 +20,6 @@ public class agregar_notas : AppCompatActivity() {
         b.btnAgrego.setOnClickListener {
             agregar()
         }
-
     }
 
     fun agregar(){
